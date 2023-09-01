@@ -23,3 +23,16 @@
 .read-the-docs {
   color: #888;
 }
+
+fieldset:not(:last-child) {
+  text-align: left;
+  margin-bottom: 30px;
+}
+
+fieldset div:not(:last-child) {
+  margin-bottom: 10px;
+}
+
+pre {
+  text-align: left;
+}
