@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo, useState } from "preact/hooks";
+import { useCallback, useMemo, useState } from "preact/hooks";
 import "./app.css";
 import { build } from "./tm";
 
@@ -43,10 +43,6 @@ export function App() {
     shielded: "UTP",
   });
 
-  // useEffect(() => {
-  //   console.log(cableType);
-  // }, [cableType]);
-
   const body = useMemo(() => {
     if (cableType === "plain") {
       return plainText;
@@ -80,12 +76,24 @@ export function App() {
         <legend>Type</legend>
 
         <div>
-          <input type="radio" id="lan" name="type" value="lan" checked />
+          <input
+            type="radio"
+            id="lan"
+            name="type"
+            value="lan"
+            checked={cableType === "lan"}
+          />
           <label for="lan">LAN Cable</label>
         </div>
 
         <div>
-          <input type="radio" id="plain" name="type" value="plain" />
+          <input
+            type="radio"
+            id="plain"
+            name="type"
+            value="plain"
+            checked={cableType === "plain"}
+          />
           <label for="plain">Plain text</label>
         </div>
       </fieldset>
